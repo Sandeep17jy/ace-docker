@@ -1,4 +1,4 @@
-FROM golang:1.10.3 as builder
+FROM ace-only-prebuild:latest as builder
 
 WORKDIR /opt/ibm
 COPY deps/$ACE_INSTALL .
