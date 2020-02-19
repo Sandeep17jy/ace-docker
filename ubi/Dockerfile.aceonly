@@ -1,5 +1,7 @@
 FROM ace-only-prebuild:latest as builder
 
+ARG ACE_INSTALL=IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
+COPY /go/src/github.com/ot4i/ace-docker/$ACE_INSTALL /opt/ibm/deps/$ACE_INSTALL
 WORKDIR /opt/ibm
 COPY deps/$ACE_INSTALL .
 RUN mkdir ace-11
