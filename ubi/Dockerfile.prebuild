@@ -16,4 +16,4 @@ RUN go vet ./cmd/... ./internal/...
 
 RUN wget https://ak-dsw-mul.dhe.ibm.com/sdfdl/v2/fulfill/CC4P8ML/Xa.2/Xb.ll8YenSwxvzWW_tcVdVCPMBMR3wax8iGmZr7Je97YDAmy2pzdHU/Xc.CC4P8ML/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz/Xd./Xf.lPr.D1VK/Xg.10597223/Xi./XY.sm/XZ.TJHlLoQum0TrNYnAIas5_F9MZbc/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz#anchor
 ARG ACE_INSTALL=IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
-COPY $ACE_INSTALL /opt/ibm/deps/$ACE_INSTALL
+COPY /go/src/github.com/ot4i/ace-docker/$ACE_INSTALL /opt/ibm/deps/$ACE_INSTALL
