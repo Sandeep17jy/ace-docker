@@ -10,7 +10,7 @@ ENV SUMMARY="Integration Server for App Connect Enterprise" \
     PRODNAME="AppConnectEnterprise" \
     COMPNAME="IntegrationServer"
 
-FROM registry.access.redhat.com/ubi7/ubi-minimal
+FROM ubi-minimal:latest
 
 LABEL summary="$SUMMARY" \
       description="$DESCRIPTION" \
