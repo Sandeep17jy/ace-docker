@@ -1,9 +1,7 @@
 FROM ace-only-prebuild:latest as builder
 
-RUN ls /go/src/github.com/ot4i/ace-docker/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
 WORKDIR /opt/ibm
 RUN cp /go/src/github.com/ot4i/ace-docker/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz .
-RUN ls /opt/ibm/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
 RUN mkdir ace-11
 RUN tar -xzf IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz --absolute-names --exclude ace-11.\*/tools --strip-components 1 --directory /opt/ibm/ace-11
 
