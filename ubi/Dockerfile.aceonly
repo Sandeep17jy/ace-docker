@@ -10,8 +10,6 @@ ENV SUMMARY="Integration Server for App Connect Enterprise" \
     PRODNAME="AppConnectEnterprise" \
     COMPNAME="IntegrationServer"
 
-FROM ubi-minimal:latest
-
 LABEL summary="$SUMMARY" \
       description="$DESCRIPTION" \
       io.k8s.description="$DESCRIPTION" \
