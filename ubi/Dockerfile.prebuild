@@ -1,4 +1,11 @@
-FROM go-toolset:latest as builder
+FROM ubi-minimal:latest as builder
+
+RUN wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
+RUN tar -xzf go1.13.3.linux-amd64.tar.gz
+RUN mv go /usr/local
+RUN export GOROOT=/usr/local/go
+RUN export GOPATH=$HOME/Projects/Proj1
+RUN export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 WORKDIR /go/src/github.com/ot4i/ace-docker/
 ARG IMAGE_REVISION="Not specified"
