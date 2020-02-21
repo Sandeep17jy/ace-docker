@@ -15,7 +15,3 @@ RUN go test -v ./internal/...
 RUN go vet ./cmd/... ./internal/...
 
 RUN wget https://ak-dsw-mul.dhe.ibm.com/sdfdl/v2/fulfill/CC4P8ML/Xa.2/Xb.ll8YenSwxvzWW_tcVdVCPMBMR3wax8iGmZr7Je97YDAmy2pzdHU/Xc.CC4P8ML/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz/Xd./Xf.lPr.D1VK/Xg.10597223/Xi./XY.sm/XZ.TJHlLoQum0TrNYnAIas5_F9MZbc/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz#anchor
-RUN pwd
-RUN ls /go/src/github.com/ot4i/ace-docker/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
-RUN ls /opt
-RUN cp IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz /opt/ibm/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
