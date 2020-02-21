@@ -1,6 +1,6 @@
 FROM ubi:latest as builder
 
-RUN microdnf install wget
+RUN yum -y install wget
 RUN wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 RUN tar -xzf go1.13.3.linux-amd64.tar.gz
 RUN mv go /usr/local
