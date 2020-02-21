@@ -1,10 +1,10 @@
 FROM ace-only-prebuild:latest as builder
 
 ARG ACE_INSTALL=IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
-RUN cp /go/src/github.com/ot4i/ace-docker/$ACE_INSTALL /opt/ibm/$ACE_INSTALL
+RUN cp /go/src/github.com/ot4i/ace-docker/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz /opt/ibm/IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz
 WORKDIR /opt/ibm
 RUN mkdir ace-11
-RUN tar -xzf $ACE_INSTALL --absolute-names --exclude ace-11.\*/tools --strip-components 1 --directory /opt/ibm/ace-11
+RUN tar -xzf IBM_ACE_11.0.0.7_LNX_X8664_INCTKT.tar.gz --absolute-names --exclude ace-11.\*/tools --strip-components 1 --directory /opt/ibm/ace-11
 
 ENV SUMMARY="Integration Server for App Connect Enterprise" \
     DESCRIPTION="Integration Server for App Connect Enterprise" \
