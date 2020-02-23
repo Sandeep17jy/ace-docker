@@ -6,6 +6,7 @@ RUN wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 RUN tar -xzf go1.13.3.linux-amd64.tar.gz
 RUN export GOPATH=/opt/local/go
 RUN export PATH=$PATH:$GOPATH/bin
+RUN echo $PATH
 RUN ls /usr/local/go/bin/go
 RUN which go
 
