@@ -23,7 +23,8 @@ test -f /usr/bin/rpm && RPM=true || RPM=false
 
 if ($RPM); then
   EXTRA_RPMS="ca-certificates curl tar"
-  $MICRODNF && microdnf install --nodocs ${EXTRA_RPMS}
+  # $MICRODNF && microdnf install --nodocs ${EXTRA_RPMS}
+  yum -y install ${EXTRA_RPMS}
 fi
 
 # Clean up cached files
