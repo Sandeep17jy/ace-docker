@@ -36,7 +36,7 @@ COPY deps/OpenTracing/config/* ./etc/ACEOpenTracing/
 WORKDIR /opt/ibm
 
 # RUN yum -y install --nodocs openssl util-linux unzip python2 && yum clean all
-RUN dnf install --nodocs openssl util-linux unzip python2 && dnf clean all
+RUN microdnf install --nodocs openssl util-linux unzip python2 && microdnf clean all
 COPY --from=builder /opt/ibm/ace-11 /opt/ibm/ace-11
 RUN /opt/ibm/ace-11/ace make registry global accept license silently
 
