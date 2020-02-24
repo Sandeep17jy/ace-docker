@@ -1,13 +1,12 @@
 FROM ubi:latest as builder
 
 RUN yum -y install wget
-WORKDIR /usr/local
+WORKDIR /opt
 RUN wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 RUN tar -xzf go1.13.3.linux-amd64.tar.gz
-RUN export GOPATH=/opt/local/go
-RUN export PATH=$GOPATH/bin:$PATH
-RUN echo $PATH
-RUN ls /usr/local/go/bin/go
+WORKDIR /usr/local/bin
+RUN cp /opt/go/bin/go .
+RUN ls /usr/local/bin/go
 RUN which go
 RUN go version
 
