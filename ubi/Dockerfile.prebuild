@@ -5,10 +5,7 @@ WORKDIR /opt
 RUN wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 RUN tar -xzf go1.13.3.linux-amd64.tar.gz
 ENV GOHOME "/opt/go"
-RUN echo $GOHOME
 ENV PATH "$PATH:$GOHOME/bin"
-RUN echo $PATH
-RUN which go
 RUN go version
 
 WORKDIR /go/src/github.com/ot4i/ace-docker/
