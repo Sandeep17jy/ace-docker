@@ -1,5 +1,4 @@
-ARG BASE_IMAGE=ace-only:latest
-FROM $BASE_IMAGE
+FROM ace-only:latest as builder
 
 # The MQ packages to install - see install-mq.sh for default value
 ARG MQ_URL="https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/messaging/mqadv/mqadv_dev913_linux_x86-64.tar.gz"
