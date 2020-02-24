@@ -13,10 +13,6 @@ USER root
 COPY ubi/install-mq.sh /usr/local/bin/
 COPY ubi/install-mq-client-prereqs.sh /usr/local/bin/
 # Install MQ.  To avoid a "text file busy" error here, we sleep before installing.
-### make back to one line
-RUN chmod u+x /usr/local/bin/install-*.sh && sleep 1
-RUN install-mq-client-prereqs.sh $MQM_UID
-RUN install-mq.sh $MQM_UID
-###
+RUN chmod u+x /usr/local/bin/install-*.sh && sleep 1 && RUN install-mq-client-prereqs.sh $MQM_UID && RUN install-mq.sh $MQM_UID
 
-USER aceuser
+USER aceuse
