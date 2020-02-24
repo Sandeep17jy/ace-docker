@@ -44,8 +44,8 @@ RUN /opt/ibm/ace-11/ace make registry global accept license silently
 RUN ls /go/src/ot4i/ace-docker/*
 # COPY --from=builder /go/src/github.com/ot4i/ace-docker/runaceserver /usr/local/bin/
 # COPY --from=builder /go/src/github.com/ot4i/ace-docker/chkace* /usr/local/bin/
-RUN cp /go/src/ot4i/ace-docker/runaceserver /usr/local/bin/
-RUN cp /go/src/ot4i/ace-docker/chkace* /usr/local/bin/
+RUN cp /go/src/github.com/ot4i/ace-docker/runaceserver /usr/local/bin/
+RUN cp /go/src/github.com/ot4i/ace-docker/chkace* /usr/local/bin/
 
 # Copy in script files
 COPY *.sh /usr/local/bin/
