@@ -37,7 +37,6 @@ WORKDIR /opt/ibm
 
 # RUN yum -y install --nodocs openssl util-linux unzip python2 && yum clean all
 RUN yum -y install openssl util-linux unzip python2 && yum clean all
-RUN ls /opt/ibm/ace-11
 RUN /opt/ibm/ace-11/ace make registry global accept license silently
 
 # Copy in PID1 process
@@ -47,7 +46,9 @@ RUN cp /go/src/github.com/ot4i/ace-docker/chkace* /usr/local/bin/
 # Copy in script files
 COPY *.sh /usr/local/bin/
 
-ADD https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+# ADD https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl
+RUN cp kubectl /usr/local/bin/kubectl
 RUN chmod +x /usr/local/bin/kubectl && \
     /usr/local/bin/kubectl version --client
 
