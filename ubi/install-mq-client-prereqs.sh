@@ -28,4 +28,5 @@ if ($RPM); then
 fi
 
 # Clean up cached files
-$MICRODNF && microdnf clean all
+# $MICRODNF && microdnf clean all
+yum clean all
