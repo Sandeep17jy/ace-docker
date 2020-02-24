@@ -6,7 +6,7 @@ RUN wget https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
 RUN tar -xzf go1.13.3.linux-amd64.tar.gz
 WORKDIR /usr/local/bin
 RUN cp /opt/go/bin/go .
-RUN ls /usr/local/bin/go
+RUN export GOROOT=/opt/go
 RUN which go
 RUN go version
 
