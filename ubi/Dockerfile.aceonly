@@ -38,11 +38,10 @@ WORKDIR /opt/ibm
 # RUN yum -y install --nodocs openssl util-linux unzip python2 && yum clean all
 RUN yum -y install openssl util-linux unzip python2 && yum clean all
 RUN ls /opt/ibm/ace-11
-# COPY --from=builder /opt/ibm/ace-11 /opt/ibm/ace-11
 RUN /opt/ibm/ace-11/ace make registry global accept license silently
 
 # Copy in PID1 process
-RUN ls /go/src/*
+RUN ls /go/src/ot4i/ace-docker/*
 # COPY --from=builder /go/src/github.com/ot4i/ace-docker/runaceserver /usr/local/bin/
 # COPY --from=builder /go/src/github.com/ot4i/ace-docker/chkace* /usr/local/bin/
 RUN cp /go/src/ot4i/ace-docker/runaceserver /usr/local/bin/
