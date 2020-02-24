@@ -1,5 +1,4 @@
-
-ARG BASE_IMAGE=ibmcom/ace
+ARG BASE_IMAGE=ace-only:latest
 FROM $BASE_IMAGE
 
 # The MQ packages to install - see install-mq.sh for default value
