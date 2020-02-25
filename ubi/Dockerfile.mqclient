@@ -18,4 +18,4 @@ RUN chmod u+x /usr/local/bin/install-*.sh && sleep 1
 RUN install-mq-client-prereqs.sh $MQM_UID	
 RUN install-mq.sh $MQM_UID
 
-USER aceuse
+USER aceuser
